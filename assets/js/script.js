@@ -11,37 +11,46 @@ var specialCharacters = ["@", "#", "$", "%", "^", "&", "*", "(", ")", "-", "_", 
 
 var selectedArray = [];
 var userArray = [];
+var passwordLength = correctPassword ();
+
 
 // Window prompt for each array/value for password.
-  var numCharacter = window.prompt ("How many characters do you want between 8 and 128?");
-  var numbers = window.confirm ("Do you want numbers in your password?");
-  var uppercases = window.confirm ("Do you want uppercases letters in your password?");
-  var lowercases = window.confirm ("Do you want lowercases letters in your password?");
-  var characters = window.confirm ("Do you want special characters in your password?");
+function correctPassword () {
+  var passwordLength = 0;
+    while ((passwordLength < 8) || (passwordLength > 128)) {
+      passwordLength = window.prompt("How many characters do you want between 8 and 128?");
+      }
+    return passwordLength;
+  }
+  var numbervalue = window.confirm ("Do you want numbers in your password?");
+  var uppercase = window.confirm ("Do you want uppercases letters in your password?");
+  var lowercase = window.confirm ("Do you want lowercases letters in your password?");
+  var specialcharacters = window.confirm ("Do you want special characters in your password?");
 
   
 
 // condition of the array
 
-if (numbers){
+
+if (numbervalue) {
   selectedArray = selectedArray.concat(numberValue);
 }
 
-if (uppercases){
+if (uppercase) {
   selectedArray = selectedArray.concat(upperCase);
 }
 
-if (lowercases){
+if (lowercase) {
   selectedArray = selectedArray.concat(lowerCase);
 }
 
-if (characters){
+if (specialcharacters) {
   selectedArray = selectedArray.concat(specialCharacters);
 }
 console.log(selectedArray)
 
 
-for (var i = 0; i < numCharacter; i++) {
+for (var i = 0; i < passwordLength; i++) {
   userArray.push (selectedArray[Math.floor(Math.random() * selectedArray.length)]); 
   }
   return userArray.join("") ;
