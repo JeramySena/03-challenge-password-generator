@@ -29,16 +29,14 @@ function correctPassword () {
 
   
 
-// condition of the array
-
-
+// Selection for each array/value.
 if (numbervalue) {
   selectedArray = selectedArray.concat(numberValue);
-}
+} 
 
 if (uppercase) {
   selectedArray = selectedArray.concat(upperCase);
-}
+} 
 
 if (lowercase) {
   selectedArray = selectedArray.concat(lowerCase);
@@ -62,15 +60,7 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
-}
-
-function copyToClipboard() {
-  // BONUS 
 }
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-// BONUS EVENT LISTENER
